@@ -47,7 +47,9 @@ public class MyConfig {
 	                .anyRequest().permitAll()
 	            )
 	            .formLogin(form->form
-	            		.loginPage("/signin")	            		
+	            		.loginPage("/signin")//custom login page
+	            		.loginProcessingUrl("/dologin")
+	            		.defaultSuccessUrl("/user/index")
 	            		) 
 	            .csrf(csrf -> csrf.disable());;
 
